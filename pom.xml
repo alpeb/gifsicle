@@ -11,9 +11,9 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>gifsicle</artifactId>
-    <version>0.1.3-SNAPSHOT</version>
+    <version>0.1.6-SNAPSHOT</version>
     <name>gifsicle</name>
-    <description>WebJar for node-gifsicle</description>
+    <description>WebJar for gifsicle-bin</description>
     <url>http://webjars.org</url>
 
     <licenses>
@@ -41,9 +41,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstreamVersion>0.1.3</upstreamVersion>
-        <upstream.url>https://github.com/kevva/node-gifsicle</upstream.url>
-        <extractDir>${project.build.directory}/node-gifsicle-${upstreamVersion}</extractDir>
+        <upstreamVersion>0.1.6</upstreamVersion>
+        <upstream.url>https://github.com/imagemin/gifsicle-bin</upstream.url>
+        <extractDir>${project.build.directory}/gifsicle-bin-${upstreamVersion}</extractDir>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destDir>
     </properties>
 
@@ -62,7 +62,7 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}/archive</url>
-                            <fromFile>v${upstreamVersion}.zip</fromFile>
+                            <fromFile>${upstreamVersion}.zip</fromFile>
                             <toDir>${project.build.directory}</toDir>
                         </configuration>
                     </execution>
@@ -81,12 +81,12 @@
                         <configuration>
                             <target>
                                 <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/v${upstreamVersion}.zip" dest="${project.build.directory}" />
+                                <unzip src="${project.build.directory}/${upstreamVersion}.zip" dest="${project.build.directory}" />
 
                                 <echo message="moving resources" />
                                 <move file="${extractDir}/package.json" toDir="${destDir}" />
+                                <move file="${extractDir}/index.js" toDir="${destDir}" />
                                 <move file="${extractDir}/vendor" toDir="${destDir}" />
-                                <move file="${extractDir}/lib" toDir="${destDir}" />
                             </target>
                         </configuration>
                     </execution>
