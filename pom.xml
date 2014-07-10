@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>gifsicle</artifactId>
-    <version>0.1.7-SNAPSHOT</version>
+    <version>0.1.6-1-SNAPSHOT</version>
     <name>gifsicle</name>
     <description>WebJar for gifsicle-bin</description>
     <url>http://webjars.org</url>
@@ -46,6 +46,24 @@
         <extractDir>${project.build.directory}/gifsicle-bin-${upstreamVersion}</extractDir>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destDir>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bin-build</artifactId>
+            <version>0.1.1-1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bin-wrapper</artifactId>
+            <version>0.3.4-1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>chalk</artifactId>
+            <version>0.4.0-1</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
