@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>gifsicle</artifactId>
-    <version>0.1.6-1</version>
+    <version>0.1.7-SNAPSHOT</version>
     <name>gifsicle</name>
     <description>WebJar for gifsicle-bin</description>
     <url>http://webjars.org</url>
@@ -28,7 +28,7 @@
         <url>https://github.com/webjars/gifsicle</url>
         <connection>scm:git:https://github.com/webjars/gifsicle.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/gifsicle.git</developerConnection>
-        <tag>gifsicle-0.1.6-1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
